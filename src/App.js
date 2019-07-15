@@ -1,24 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { getUserAndRepos } from './services/github';
+import UserProfile from './components/UserProfile';
+import UserPicker from './components/UserPicker';
+import RepoListing from './components/RepoListing';
 
 function App() {
+  const [username, updateUsername] = React.useState("ermik");
+  const [user, updateUser] = React.useState({});
+
+  React.useEffect(() => {
+    if (!username) {
+      return;
+    }
+
+    (async () => {
+      updateUser(await getUserAndRepos(username));
+    })()
+
+  }, [updateUser, username])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <h1>An Unexpected Party</h1>
+          Certain wizard always vetted his co-conspirators, so should you. Pick a name to see what they've been up to.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <UserPicker onChange={updateUsername} />
       </header>
+      <section id="userInfo">
+        <UserProfile data={user} />
+      </section>
+      <section id="repoListing">
+        <RepoListing data={user.repositories} user={user.login} />
+      </section>
     </div>
   );
 }
