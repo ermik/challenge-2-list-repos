@@ -7,12 +7,12 @@ const Repo = (props) => {
     const watchCount = props.data.watchers.totalCount;
     const starCount = props.data.stargazers.totalCount;
 
-    if (!name || forkCount) {
+    if (!name || typeof forkCount === 'undefined') {
+        console.error('not enogh data to display repo information');
         return null;
     }
 
     return (<RepoWrapper>
-
         <RepoName>
             <RepoTitle href={props.data.url}>{props.user}/{name}</RepoTitle>
             <p>{description}</p>
@@ -22,7 +22,6 @@ const Repo = (props) => {
             <RepoStat>{watchCount} watchers</RepoStat>
             <RepoStat>{starCount} stars</RepoStat>
         </RepoStats>
-
     </RepoWrapper>)
 }
 
