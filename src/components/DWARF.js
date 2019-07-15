@@ -67,7 +67,7 @@ const scoreStrings = {
     ok: "O.K. as long as you avoid hidden doors and webbed woods.",
     great: `You may have found your next "burglar".`,
     amazing: "You'd be glad you had them if you have to share a barrel.",
-    extreme: "Take them with you and make sure you don't forget the hankerchief.",
+    extreme: "Take them with you and make sure you don't forget the handkerchief.",
     regular: "Might work, as long as your journey doesn't involve dragons.",
 }
 

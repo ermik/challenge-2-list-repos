@@ -57,7 +57,7 @@ const UserPicker = (props) => {
             loadOptions={loadOptions}
             onInputChange={handleInput}
             onChange={pickUsername}
-            placeholder={"find a user lookup repos"}
+            placeholder={"Find a GitHub user to investigate..."}
              />
         </div>
     )
