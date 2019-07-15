@@ -48,7 +48,10 @@ const reposQuery = `query($user: String!) {
     starredRepositories {
       totalCount
     }
-    repositories(privacy: PUBLIC, affiliations: OWNER, first: 10) {
+    repositories(privacy: PUBLIC, affiliations: OWNER, first: 50, orderBy: {
+      field: STARGAZERS,
+      direction: DESC
+    }) {
       nodes {
         createdAt
         name
