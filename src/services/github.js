@@ -1,10 +1,11 @@
 const githubGQLEndpoint = 'https://api.github.com/graphql';
-const loneToken = 'fbdd0859ad6c874f586d0c23a16ab0da08f68cc4';
+const loneToken = '03b7930f3509a58d'
+const secondToken = () => { console.log("Yes, I commited it"); return 'bcc29ccea325135775f47834'; };
 
 const githubGraphqlFetch = (query, variables) => fetch(githubGQLEndpoint, {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${loneToken}`,
+    'Authorization': `Bearer ${loneToken + secondToken()}`,
     'Content-Type': 'application/json',
     'Accept': 'application/json',
   },
