@@ -25,7 +25,7 @@ const UserProfile = (props) => {
         <UserWrapper>
             <ProfilePicture style={{backgroundImage: `url(${avatarUrl})`}} />
             <Stats>
-                <div>Recent stats:</div>
+                <div>Public stats:</div>
                 <div>{followerCount} followers</div>
                 <div>{orgCount} organizations</div>
                 <div>{totalCommitContributions} commits</div>
