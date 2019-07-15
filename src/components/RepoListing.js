@@ -10,8 +10,6 @@ const RepoListing = (props) => {
         return (<div>Nothing to show...</div>);
     }
 
-    console.log(props);
-
     return (<RepoList>
         {props.data.nodes.map((r, i) => {
             return (<Repo key={i} data={r} user={props.user} />)

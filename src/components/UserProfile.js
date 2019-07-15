@@ -6,11 +6,8 @@ const UserProfile = (props) => {
         return null;
     }
 
-    console.log(props.data);
-
     const {
         avatarUrl,
-        name,
     } = props.data;
 
     const followerCount = (props.data.followers || {}).totalCount;

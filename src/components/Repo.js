@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Repo = (props) => {
-    const { createdAt, name, description } = props.data;
+    const { name, description } = props.data;
     const forkCount = props.data.forkCount;
     const watchCount = props.data.watchers.totalCount;
     const starCount = props.data.stargazers.totalCount;
@@ -10,8 +10,6 @@ const Repo = (props) => {
     if (!name || forkCount) {
         return null;
     }
-
-    console.log(createdAt);
 
     return (<RepoWrapper>
 

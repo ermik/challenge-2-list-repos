@@ -6,7 +6,7 @@ import UserPicker from './components/UserPicker';
 import RepoListing from './components/RepoListing';
 
 function App() {
-  const [username, updateUsername] = React.useState("ermik");
+  const [username, updateUsername] = React.useState(undefined);
   const [user, updateUser] = React.useState({});
 
   React.useEffect(() => {
@@ -23,8 +23,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>An Unexpected Party</h1>
         <p>
-          <h1>An Unexpected Party</h1>
           Certain wizard always vetted his co-conspirators, so should you. Pick a name to see what they've been up to.
         </p>
         <UserPicker onChange={updateUsername} />
